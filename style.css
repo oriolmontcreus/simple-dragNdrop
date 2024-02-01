@@ -1,0 +1,94 @@
+body {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    min-height: 120px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#right, #left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #252525;
+    border: 4px solid black;
+    border-radius: 20px;
+    gap: 5px;
+}
+
+.number, .cell{
+    width: 100px;
+    height: 100px;
+    border: 4px solid black;
+    border-radius: 20px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    transition: background-color 0.3s
+}
+
+.number {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.number:hover {
+    cursor: move;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.no-hover:hover {
+    cursor: no-drop;
+    animation: none;
+}
+
+.number.dragging {
+    background-color: rgba(9, 74, 112, 0.548);
+    transition: background-color 0.3s
+}
+
+.number.sorted {
+    background-color: rgba(9, 112, 40, 0.548);
+    transition: background-color 0.3s
+}
+
+.ui-dialog {
+    background-color: #333 !important;
+    color: white !important;
+    border: 3px solid black !important;
+    z-index: 1000 !important;
+}
+
+/* Hover animation for .number */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
