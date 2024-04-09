@@ -1,4 +1,5 @@
 # 🧩 Simple Drag&Drop
+[Try it here (Github Pages)](https://oriolmontcreus.github.io/simple-dragNdrop/)
 
 This project is a simple drag and drop game where the user is required to sort numbers in ascending order (left to right) by dragging and dropping them into cells.
 
